@@ -1,122 +1,161 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+import 'sections/botones.dart';
+import 'sections/contenedores.dart';
+import 'sections/entrada_texto.dart';
+import 'sections/informacion.dart';
+import 'sections/listas.dart';
+import 'sections/seleccion.dart';
+import 'state.dart';
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+void main() => runApp(const CatalogoApp());
 
-  // This widget is the root of your application.
+class CatalogoApp extends StatelessWidget {
+  const CatalogoApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a purple toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
-        colorScheme: .fromSeed(seedColor: Colors.deepPurple),
+      title: 'Catálogo de UI',
+      debugShowCheckedModeBanner: false,
+      locale: const Locale('es'),
+      supportedLocales: const [Locale('es')],
+      localizationsDelegates: const [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      themeMode: ThemeMode.system, // sigue el modo claro/oscuro del sistema
+      theme: ThemeData(colorSchemeSeed: Colors.indigo, useMaterial3: true),
+      darkTheme: ThemeData(
+        colorSchemeSeed: Colors.indigo,
+        brightness: Brightness.dark,
+        useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const Principal(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
+class _Seccion {
+  const _Seccion(this.titulo, this.icono, this.builder);
+  final String titulo;
+  final IconData icono;
+  final Widget Function() builder;
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+final _secciones = <_Seccion>[
+  _Seccion('Entrada de texto', Icons.keyboard, () => const EntradaTexto()),
+  _Seccion('Botones y acciones', Icons.smart_button, () => const Botones()),
+  _Seccion('Selección', Icons.check_box, () => const Seleccion()),
+  _Seccion('Listas y colecciones', Icons.list, () => const Listas()),
+  _Seccion(
+    'Información y retroalimentación',
+    Icons.info,
+    () => const Informacion(),
+  ),
+  _Seccion(
+    'Contenedores y estructura',
+    Icons.dashboard,
+    () => const Contenedores(),
+  ),
+];
 
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
+class Principal extends StatefulWidget {
+  const Principal({super.key});
+  @override
+  State<Principal> createState() => _PrincipalState();
+}
+
+class _PrincipalState extends State<Principal> {
+  int _indice = 0; // 0 = inicio, 1..6 = secciones
+
+  void _ir(int i) => setState(() => _indice = i);
 
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
+    final titulo = _indice == 0
+        ? 'Catálogo de UI'
+        : _secciones[_indice - 1].titulo;
     return Scaffold(
       appBar: AppBar(
-        // TRY THIS: Try changing the color here to a specific color (to
-        // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
-        // change color while the other colors stay the same.
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
-      ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          //
-          // TRY THIS: Invoke "debug painting" (choose the "Toggle Debug Paint"
-          // action in the IDE, or press "p" in the console), to see the
-          // wireframe for each widget.
-          mainAxisAlignment: .center,
-          children: [
-            const Text('You have pushed the button this many times:'),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
+        title: Text(titulo),
+        actions: [
+          if (_indice != 0)
+            IconButton(
+              tooltip: 'Inicio',
+              icon: const Icon(Icons.home),
+              onPressed: () => _ir(0),
             ),
-          ],
+        ],
+      ),
+      drawer: NavigationDrawer(
+        selectedIndex: _indice,
+        onDestinationSelected: (i) {
+          Navigator.pop(context); // cierra el menú
+          _ir(i);
+        },
+        children: [
+          const Padding(
+            padding: EdgeInsets.fromLTRB(28, 16, 16, 10),
+            child: Text('Secciones', style: TextStyle(fontSize: 18)),
+          ),
+          const NavigationDrawerDestination(
+            icon: Icon(Icons.home),
+            label: Text('Inicio'),
+          ),
+          for (final s in _secciones)
+            NavigationDrawerDestination(
+              icon: Icon(s.icono),
+              label: Text(s.titulo),
+            ),
+        ],
+      ),
+      body: _indice == 0
+          ? _Inicio(onIr: _ir)
+          : _secciones[_indice - 1].builder(),
+    );
+  }
+}
+
+class _Inicio extends StatelessWidget {
+  const _Inicio({required this.onIr});
+  final void Function(int) onIr;
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView(
+      padding: const EdgeInsets.all(16),
+      children: [
+        Text(
+          'Catálogo interactivo de elementos de interfaz',
+          style: Theme.of(context).textTheme.headlineSmall,
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),
+        const SizedBox(height: 8),
+        const Text(
+          'Explora los componentes básicos de una interfaz móvil. '
+          'Elige una sección para ver cada elemento funcionando.',
+        ),
+        const SizedBox(height: 8),
+        ListenableBuilder(
+          listenable: appState,
+          builder: (_, __) => Text(
+            'Elementos en la lista (Sección 4): ${appState.elementos.length}',
+            style: Theme.of(context).textTheme.labelLarge,
+          ),
+        ),
+        const SizedBox(height: 16),
+        for (var i = 0; i < _secciones.length; i++)
+          Card(
+            child: ListTile(
+              leading: Icon(_secciones[i].icono),
+              title: Text('${i + 1}. ${_secciones[i].titulo}'),
+              trailing: const Icon(Icons.chevron_right),
+              onTap: () => onIr(i + 1),
+            ),
+          ),
+      ],
     );
   }
 }
