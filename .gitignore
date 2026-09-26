@@ -1,0 +1,9 @@
+﻿**/.gradle/
+**/.idea/
+**/.kotlin/
+**/build/
+**/local.properties
+**/*.iml
+**/.dart_tool/
+**/.flutter-plugins
+**/.flutter-plugins-dependencies
