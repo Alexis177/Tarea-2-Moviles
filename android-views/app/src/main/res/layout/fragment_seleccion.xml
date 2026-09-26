@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true">
+  <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+    <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp">
+      <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Casilla de verificación" android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="MaterialCheckBox representa una opción independiente. Marca o desmarca la casilla para cambiar el texto de estado." android:layout_marginTop="4dp" android:layout_marginBottom="12dp" />
+        <com.google.android.material.checkbox.MaterialCheckBox android:id="@+id/acepto" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Acepto los términos" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="" android:id="@+id/estado_acepto" android:layout_marginTop="8dp" />
+      </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp">
+      <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Estado indeterminado" android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="La casilla principal representa todos, ninguno o parte de los canales. Selecciona los canales o pulsa Todos para cambiarlos juntos." android:layout_marginTop="4dp" android:layout_marginBottom="12dp" />
+        <com.google.android.material.checkbox.MaterialCheckBox android:id="@+id/todos" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Todos los canales" />
+        <com.google.android.material.checkbox.MaterialCheckBox android:id="@+id/canal_correo" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Correo" />
+        <com.google.android.material.checkbox.MaterialCheckBox android:id="@+id/canal_sms" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="SMS" />
+        <com.google.android.material.checkbox.MaterialCheckBox android:id="@+id/canal_avisos" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Notificaciones" />
+      </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp">
+      <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Botones de opción" android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="RadioGroup mantiene las opciones mutuamente excluyentes. Cambia el envío y comprueba cuál queda seleccionado." android:layout_marginTop="4dp" android:layout_marginBottom="12dp" />
+        <RadioGroup android:id="@+id/envio" android:layout_width="match_parent" android:layout_height="wrap_content" android:checkedButton="@id/estandar">
+          <com.google.android.material.radiobutton.MaterialRadioButton android:id="@+id/estandar" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Estándar" />
+          <com.google.android.material.radiobutton.MaterialRadioButton android:id="@+id/rapido" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Rápido" />
+          <com.google.android.material.radiobutton.MaterialRadioButton android:id="@+id/recoger" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Recoger en tienda" />
+        </RadioGroup>
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="" android:id="@+id/estado_envio_opcion" android:layout_marginTop="8dp" />
+      </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp">
+      <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Interruptor" android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="MaterialSwitch activa una preferencia de ejemplo. Alterna su estado para mostrar la respuesta inmediata." android:layout_marginTop="4dp" android:layout_marginBottom="12dp" />
+        <com.google.android.material.materialswitch.MaterialSwitch android:id="@+id/avisos" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Notificaciones" android:checked="true" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="" android:id="@+id/estado_avisos" android:layout_marginTop="8dp" />
+      </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp">
+      <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Deslizador de valor único" android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Slider permite elegir un número dentro de un intervalo. Arrastra para cambiar el volumen de demostración." android:layout_marginTop="4dp" android:layout_marginBottom="12dp" />
+        <com.google.android.material.slider.Slider android:id="@+id/volumen" android:layout_width="match_parent" android:layout_height="wrap_content" android:valueFrom="0" android:valueTo="100" android:value="40" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="" android:id="@+id/estado_volumen" android:layout_marginTop="8dp" />
+      </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp">
+      <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Deslizador de rango" android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="RangeSlider tiene dos controles para definir mínimo y máximo. Modifica ambos extremos y observa los valores." android:layout_marginTop="4dp" android:layout_marginBottom="12dp" />
+        <com.google.android.material.slider.RangeSlider android:id="@+id/rango" android:layout_width="match_parent" android:layout_height="wrap_content" android:valueFrom="0" android:valueTo="100" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="" android:id="@+id/estado_rango" android:layout_marginTop="8dp" />
+      </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp">
+      <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Lista desplegable" android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Spinner presenta opciones en un espacio reducido. Abre el menú y selecciona una talla." android:layout_marginTop="4dp" android:layout_marginBottom="12dp" />
+        <Spinner android:id="@+id/talla" android:layout_width="match_parent" android:layout_height="48dp" android:spinnerMode="dropdown" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="" android:id="@+id/estado_talla" android:layout_marginTop="8dp" />
+      </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp">
+      <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Selector de fecha y hora" android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Los diálogos nativos permiten elegir una fecha y una hora. Confirmar actualiza el texto; cancelar conserva la selección." android:layout_marginTop="4dp" android:layout_marginBottom="12dp" />
+        <com.google.android.material.button.MaterialButton android:id="@+id/fecha" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Elegir fecha" style="?attr/materialButtonOutlinedStyle" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="" android:id="@+id/estado_fecha" android:layout_marginTop="8dp" />
+        <com.google.android.material.button.MaterialButton android:id="@+id/hora" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Elegir hora" style="?attr/materialButtonOutlinedStyle" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="" android:id="@+id/estado_hora" android:layout_marginTop="8dp" />
+      </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp">
+      <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Chips de filtro" android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="ChipGroup permite combinar varias etiquetas seleccionables. Activa categorías para mostrar tu selección." android:layout_marginTop="4dp" android:layout_marginBottom="12dp" />
+        <com.google.android.material.chip.ChipGroup android:id="@+id/filtros" android:layout_width="match_parent" android:layout_height="wrap_content">
+          <com.google.android.material.chip.Chip android:id="@+id/filtro_0" style="@style/Widget.Material3.Chip.Filter" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Música" android:checkable="true" />
+          <com.google.android.material.chip.Chip android:id="@+id/filtro_1" style="@style/Widget.Material3.Chip.Filter" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Lectura" android:checkable="true" />
+          <com.google.android.material.chip.Chip android:id="@+id/filtro_2" style="@style/Widget.Material3.Chip.Filter" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Deporte" android:checkable="true" />
+        </com.google.android.material.chip.ChipGroup>
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="" android:id="@+id/estado_filtros" android:layout_marginTop="8dp" />
+      </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+  </LinearLayout>
+</androidx.core.widget.NestedScrollView>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true">
+  <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+    <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp">
+      <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Textos con estilos" android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="TextView representa títulos, párrafos y énfasis. Alterna la negrita para cambiar el texto de demostración." android:layout_marginTop="4dp" android:layout_marginBottom="12dp" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Título del catálogo" android:textAppearance="@style/TextAppearance.Material3.HeadlineSmall" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Subtítulo" android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Texto con énfasis variable" android:id="@+id/texto_enfasis" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Nota en cursiva" android:textStyle="italic" android:textSize="12sp" />
+        <com.google.android.material.button.MaterialButton android:id="@+id/alternar_enfasis" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Alternar énfasis" />
+      </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp">
+      <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Imagen local y remota" android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="ImageView muestra recursos incluidos en la app o descargados por HTTPS. Cambia entre encajar y recortar; el botón Recargar permite reintentar la descarga." android:layout_marginTop="4dp" android:layout_marginBottom="12dp" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Imagen incluida en el proyecto" />
+        <ImageView android:id="@+id/imagen_local" android:layout_width="match_parent" android:layout_height="150dp" android:src="@drawable/imagen_local" android:contentDescription="Ilustración local del catálogo" android:scaleType="fitCenter" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Imagen desde una URL" />
+        <ImageView android:id="@+id/imagen_remota" android:layout_width="match_parent" android:layout_height="150dp" android:contentDescription="Foto descargada desde una URL" android:scaleType="fitCenter" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="" android:id="@+id/estado_imagen" android:layout_marginTop="8dp" />
+        <com.google.android.material.button.MaterialButton android:id="@+id/cambiar_escala" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Cambiar escalado" />
+        <com.google.android.material.button.MaterialButton android:id="@+id/recargar_imagen" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Recargar imagen" />
+      </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp">
+      <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Progreso determinado" android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Los indicadores muestran una fracción conocida de una tarea. Mueve el deslizador para actualizar el progreso lineal y circular." android:layout_marginTop="4dp" android:layout_marginBottom="12dp" />
+        <com.google.android.material.slider.Slider android:id="@+id/avance" android:layout_width="match_parent" android:layout_height="wrap_content" android:valueFrom="0" android:valueTo="100" android:value="40" />
+        <com.google.android.material.progressindicator.LinearProgressIndicator android:id="@+id/progreso_lineal" android:layout_width="match_parent" android:layout_height="wrap_content" android:indeterminate="false" android:max="100" android:progress="40" />
+        <com.google.android.material.progressindicator.CircularProgressIndicator android:id="@+id/progreso_circular" android:layout_width="48dp" android:layout_height="48dp" android:layout_marginTop="12dp" android:indeterminate="false" android:max="100" android:progress="40" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="" android:id="@+id/estado_progreso" android:layout_marginTop="8dp" />
+      </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp">
+      <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Progreso indeterminado" android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Comunica actividad cuando no se conoce la duración total. Pulsa el botón para mostrar u ocultar la demostración." android:layout_marginTop="4dp" android:layout_marginBottom="12dp" />
+        <com.google.android.material.progressindicator.LinearProgressIndicator android:id="@+id/lineal_indeterminado" android:layout_width="match_parent" android:layout_height="wrap_content" android:indeterminate="true" />
+        <com.google.android.material.progressindicator.CircularProgressIndicator android:id="@+id/circular_indeterminado" android:layout_width="48dp" android:layout_height="48dp" android:layout_marginTop="12dp" android:indeterminate="true" />
+        <com.google.android.material.button.MaterialButton android:id="@+id/alternar_progreso" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Iniciar o detener" />
+      </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp">
+      <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Toast y Snackbar" android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Toast muestra un aviso nativo breve. Snackbar permite deshacer el archivado de un elemento de demostración." android:layout_marginTop="4dp" android:layout_marginBottom="12dp" />
+        <com.google.android.material.button.MaterialButton android:id="@+id/mostrar_toast" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Mostrar aviso breve" />
+        <com.google.android.material.button.MaterialButton android:id="@+id/mostrar_snackbar" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Archivar ejemplo" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="" android:id="@+id/estado_archivo" android:layout_marginTop="8dp" />
+      </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp">
+      <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Diálogo de confirmación" android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="MaterialAlertDialogBuilder solicita una decisión antes de continuar. Confirmar cambia el resultado visible; cancelar no ejecuta la acción." android:layout_marginTop="4dp" android:layout_marginBottom="12dp" />
+        <com.google.android.material.button.MaterialButton android:id="@+id/mostrar_dialogo" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Abrir confirmación" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="" android:id="@+id/estado_confirmacion" android:layout_marginTop="8dp" />
+      </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp">
+      <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Hoja inferior" android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="BottomSheetDialog presenta acciones desde la parte inferior. Elige una opción para mostrar su nombre y cerrar la hoja." android:layout_marginTop="4dp" android:layout_marginBottom="12dp" />
+        <com.google.android.material.button.MaterialButton android:id="@+id/mostrar_hoja" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Abrir opciones" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="" android:id="@+id/estado_hoja" android:layout_marginTop="8dp" />
+      </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp">
+      <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Tarjeta y separador" android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="MaterialCardView agrupa información y MaterialDivider separa contenido. Pulsa la tarjeta para contar visitas y alterna el grosor de la línea." android:layout_marginTop="4dp" android:layout_marginBottom="12dp" />
+        <com.google.android.material.card.MaterialCardView android:id="@+id/tarjeta_interactiva" android:layout_width="match_parent" android:layout_height="wrap_content" android:clickable="true" android:focusable="true">
+          <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Pulsa la tarjeta · 0 visitas" android:id="@+id/visitas_tarjeta" android:padding="20dp" />
+        </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.divider.MaterialDivider android:id="@+id/separador" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginVertical="12dp" />
+        <com.google.android.material.button.MaterialButton android:id="@+id/alternar_separador" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Cambiar separador" />
+      </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp">
+      <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Distintivo numérico" android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="BadgeDrawable muestra la cantidad de avisos junto al ícono. Pulsa el ícono para marcarlos como leídos o agrega un aviso." android:layout_marginTop="4dp" android:layout_marginBottom="12dp" />
+        <FrameLayout android:id="@+id/badge_contenedor" android:layout_width="64dp" android:layout_height="64dp" android:clipChildren="false" android:clipToPadding="false">
+          <ImageButton android:id="@+id/badge_icono" android:layout_width="48dp" android:layout_height="48dp" android:layout_gravity="center" android:src="@android:drawable/ic_dialog_info" android:contentDescription="Leer avisos" android:background="?attr/selectableItemBackgroundBorderless" />
+        </FrameLayout>
+        <com.google.android.material.button.MaterialButton android:id="@+id/agregar_aviso" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Agregar aviso" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="" android:id="@+id/estado_badge" android:layout_marginTop="8dp" />
+      </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+  </LinearLayout>
+</androidx.core.widget.NestedScrollView>

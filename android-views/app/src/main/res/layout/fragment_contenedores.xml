@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true">
+  <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+    <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp">
+      <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Distribución en fila" android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="LinearLayout horizontal coloca elementos uno junto al otro. Pulsa cada bloque para identificarlo." android:layout_marginTop="4dp" android:layout_marginBottom="12dp" />
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center">
+          <TextView android:id="@+id/fila_0" android:layout_width="0dp" android:layout_height="48dp" android:gravity="center" android:text="A" android:background="?attr/colorSecondaryContainer" android:textColor="?attr/colorOnSecondaryContainer" android:clickable="true" android:focusable="true" android:layout_weight="1" android:layout_margin="4dp" />
+          <TextView android:id="@+id/fila_1" android:layout_width="0dp" android:layout_height="48dp" android:gravity="center" android:text="B" android:background="?attr/colorSecondaryContainer" android:textColor="?attr/colorOnSecondaryContainer" android:clickable="true" android:focusable="true" android:layout_weight="1" android:layout_margin="4dp" />
+          <TextView android:id="@+id/fila_2" android:layout_width="0dp" android:layout_height="48dp" android:gravity="center" android:text="C" android:background="?attr/colorSecondaryContainer" android:textColor="?attr/colorOnSecondaryContainer" android:clickable="true" android:focusable="true" android:layout_weight="1" android:layout_margin="4dp" />
+        </LinearLayout>
+      </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp">
+      <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Distribución en columna" android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="LinearLayout vertical apila sus hijos. Pulsa los bloques para ver sus acciones individuales." android:layout_marginTop="4dp" android:layout_marginBottom="12dp" />
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+          <TextView android:id="@+id/columna_0" android:layout_width="match_parent" android:layout_height="48dp" android:gravity="center" android:text="1" android:background="?attr/colorSecondaryContainer" android:textColor="?attr/colorOnSecondaryContainer" android:clickable="true" android:focusable="true" android:layout_marginBottom="4dp" />
+          <TextView android:id="@+id/columna_1" android:layout_width="match_parent" android:layout_height="48dp" android:gravity="center" android:text="2" android:background="?attr/colorSecondaryContainer" android:textColor="?attr/colorOnSecondaryContainer" android:clickable="true" android:focusable="true" android:layout_marginBottom="4dp" />
+          <TextView android:id="@+id/columna_2" android:layout_width="match_parent" android:layout_height="48dp" android:gravity="center" android:text="3" android:background="?attr/colorSecondaryContainer" android:textColor="?attr/colorOnSecondaryContainer" android:clickable="true" android:focusable="true" android:layout_marginBottom="4dp" />
+        </LinearLayout>
+      </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp">
+      <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Distribución superpuesta" android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="FrameLayout permite colocar una vista encima de otra. Pulsa la etiqueta para cambiarla de esquina." android:layout_marginTop="4dp" android:layout_marginBottom="12dp" />
+        <FrameLayout android:layout_width="match_parent" android:layout_height="130dp" android:background="?attr/colorSurfaceVariant">
+          <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Contenido de fondo" android:layout_gravity="center" android:gravity="center" />
+          <TextView android:id="@+id/etiqueta_superpuesta" android:layout_width="wrap_content" android:layout_height="48dp" android:gravity="center" android:text="Mover etiqueta" android:background="?attr/colorSecondaryContainer" android:textColor="?attr/colorOnSecondaryContainer" android:clickable="true" android:focusable="true" android:paddingHorizontal="12dp" android:layout_gravity="bottom|end" />
+        </FrameLayout>
+      </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp">
+      <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Desplazamiento vertical" android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="NestedScrollView permite recorrer contenido más alto que su contenedor. Desliza dentro del recuadro y pulsa una fila." android:layout_marginTop="4dp" android:layout_marginBottom="12dp" />
+        <androidx.core.widget.NestedScrollView android:layout_width="match_parent" android:layout_height="180dp">
+          <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Fila 1" android:id="@+id/scroll_0" android:padding="16dp" android:clickable="true" android:focusable="true" android:background="?attr/selectableItemBackground" />
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Fila 2" android:id="@+id/scroll_1" android:padding="16dp" android:clickable="true" android:focusable="true" android:background="?attr/selectableItemBackground" />
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Fila 3" android:id="@+id/scroll_2" android:padding="16dp" android:clickable="true" android:focusable="true" android:background="?attr/selectableItemBackground" />
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Fila 4" android:id="@+id/scroll_3" android:padding="16dp" android:clickable="true" android:focusable="true" android:background="?attr/selectableItemBackground" />
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Fila 5" android:id="@+id/scroll_4" android:padding="16dp" android:clickable="true" android:focusable="true" android:background="?attr/selectableItemBackground" />
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Fila 6" android:id="@+id/scroll_5" android:padding="16dp" android:clickable="true" android:focusable="true" android:background="?attr/selectableItemBackground" />
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Fila 7" android:id="@+id/scroll_6" android:padding="16dp" android:clickable="true" android:focusable="true" android:background="?attr/selectableItemBackground" />
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Fila 8" android:id="@+id/scroll_7" android:padding="16dp" android:clickable="true" android:focusable="true" android:background="?attr/selectableItemBackground" />
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Fila 9" android:id="@+id/scroll_8" android:padding="16dp" android:clickable="true" android:focusable="true" android:background="?attr/selectableItemBackground" />
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Fila 10" android:id="@+id/scroll_9" android:padding="16dp" android:clickable="true" android:focusable="true" android:background="?attr/selectableItemBackground" />
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Fila 11" android:id="@+id/scroll_10" android:padding="16dp" android:clickable="true" android:focusable="true" android:background="?attr/selectableItemBackground" />
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Fila 12" android:id="@+id/scroll_11" android:padding="16dp" android:clickable="true" android:focusable="true" android:background="?attr/selectableItemBackground" />
+          </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+      </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp">
+      <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Barra superior" android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="MaterialToolbar muestra un título y acciones. Pulsa Actualizar en la barra de ejemplo para incrementar el contador." android:layout_marginTop="4dp" android:layout_marginBottom="12dp" />
+        <com.google.android.material.appbar.MaterialToolbar android:id="@+id/toolbar_demo" android:layout_width="match_parent" android:layout_height="?attr/actionBarSize" app:title="Mi catálogo" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="" android:id="@+id/estado_toolbar" android:layout_marginTop="8dp" />
+      </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp">
+      <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Navegación inferior" android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="BottomNavigationView permite elegir entre destinos principales. Este ejemplo cambia el panel inferior; el menú superior abre las seis secciones reales." android:layout_marginTop="4dp" android:layout_marginBottom="12dp" />
+        <com.google.android.material.bottomnavigation.BottomNavigationView android:id="@+id/nav_demo" android:layout_width="match_parent" android:layout_height="wrap_content" app:menu="@menu/navegacion_demo" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="" android:id="@+id/estado_navegacion" android:layout_marginTop="8dp" />
+      </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp">
+      <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Pesos proporcionales" android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="layout_weight distribuye el ancho entre varios elementos. Cambia el peso central y compara la proporción con los bloques laterales." android:layout_marginTop="4dp" android:layout_marginBottom="12dp" />
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+          <TextView android:id="@+id/peso_izquierdo" android:layout_width="0dp" android:layout_height="48dp" android:gravity="center" android:text="1" android:background="?attr/colorSecondaryContainer" android:textColor="?attr/colorOnSecondaryContainer" android:clickable="true" android:focusable="true" android:layout_weight="1" android:layout_marginEnd="4dp" />
+          <TextView android:id="@+id/peso_central" android:layout_width="0dp" android:layout_height="48dp" android:gravity="center" android:text="2" android:background="?attr/colorSecondaryContainer" android:textColor="?attr/colorOnSecondaryContainer" android:clickable="true" android:focusable="true" android:layout_weight="2" />
+          <TextView android:id="@+id/peso_derecho" android:layout_width="0dp" android:layout_height="48dp" android:gravity="center" android:text="1" android:background="?attr/colorSecondaryContainer" android:textColor="?attr/colorOnSecondaryContainer" android:clickable="true" android:focusable="true" android:layout_weight="1" android:layout_marginStart="4dp" />
+        </LinearLayout>
+        <com.google.android.material.button.MaterialButton android:id="@+id/cambiar_peso" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Cambiar peso central" />
+      </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+  </LinearLayout>
+</androidx.core.widget.NestedScrollView>

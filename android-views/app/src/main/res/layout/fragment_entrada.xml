@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true">
+  <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+    <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp">
+      <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Campo de texto simple" android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="TextInputEditText captura un nombre. Pulsa Agregar para enviarlo a la lista de la sección 4." android:layout_marginTop="4dp" android:layout_marginBottom="12dp" />
+        <com.google.android.material.textfield.TextInputLayout android:id="@+id/layout_nombre" style="@style/Widget.Material3.TextInputLayout.OutlinedBox" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="8dp" android:hint="Nombre">
+          <com.google.android.material.textfield.TextInputEditText android:id="@+id/nombre" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.button.MaterialButton android:id="@+id/agregar" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Agregar a la lista" />
+      </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp">
+      <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Validación con error" android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="TextInputLayout muestra un error cuando el usuario tiene menos de tres caracteres. Escribe para ver cómo cambia la validación." android:layout_marginTop="4dp" android:layout_marginBottom="12dp" />
+        <com.google.android.material.textfield.TextInputLayout android:id="@+id/layout_usuario" style="@style/Widget.Material3.TextInputLayout.OutlinedBox" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="8dp" android:hint="Usuario">
+          <com.google.android.material.textfield.TextInputEditText android:id="@+id/usuario" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+      </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp">
+      <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Contraseña visible u oculta" android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="El campo protege el texto con puntos. El ícono del ojo alterna su visibilidad." android:layout_marginTop="4dp" android:layout_marginBottom="12dp" />
+        <com.google.android.material.textfield.TextInputLayout android:id="@+id/layout_clave" style="@style/Widget.Material3.TextInputLayout.OutlinedBox" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="8dp" android:hint="Contraseña" app:endIconMode="password_toggle">
+          <com.google.android.material.textfield.TextInputEditText android:id="@+id/clave" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="textPassword" />
+        </com.google.android.material.textfield.TextInputLayout>
+      </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp">
+      <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Tipos de teclado" android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="El tipo de entrada adapta el teclado al dato esperado. Pulsa cada campo para comparar número, correo y teléfono." android:layout_marginTop="4dp" android:layout_marginBottom="12dp" />
+        <com.google.android.material.textfield.TextInputLayout android:id="@+id/layout_numero" style="@style/Widget.Material3.TextInputLayout.OutlinedBox" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="8dp" android:hint="Numérico">
+          <com.google.android.material.textfield.TextInputEditText android:id="@+id/numero" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout android:id="@+id/layout_correo" style="@style/Widget.Material3.TextInputLayout.OutlinedBox" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="8dp" android:hint="Correo electrónico">
+          <com.google.android.material.textfield.TextInputEditText android:id="@+id/correo" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="textEmailAddress" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout android:id="@+id/layout_telefono" style="@style/Widget.Material3.TextInputLayout.OutlinedBox" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="8dp" android:hint="Teléfono">
+          <com.google.android.material.textfield.TextInputEditText android:id="@+id/telefono" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="phone" />
+        </com.google.android.material.textfield.TextInputLayout>
+      </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp">
+      <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Campo multilínea" android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Permite redactar comentarios de varias líneas. Escribe y usa el salto de línea para ampliar el contenido." android:layout_marginTop="4dp" android:layout_marginBottom="12dp" />
+        <EditText android:id="@+id/comentarios" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Comentarios" android:inputType="textMultiLine" android:minLines="3" android:maxLines="5" android:gravity="top" />
+      </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp">
+      <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Sugerencias automáticas" android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="AutoCompleteTextView filtra una lista según lo escrito. Escribe una letra y selecciona uno de los países sugeridos." android:layout_marginTop="4dp" android:layout_marginBottom="12dp" />
+        <androidx.appcompat.widget.AppCompatAutoCompleteTextView android:id="@+id/pais" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="País" android:inputType="text" android:completionThreshold="1" />
+      </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp">
+      <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Barra de búsqueda" android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="SearchView recibe consultas y permite borrarlas con su botón de limpieza. El resultado inferior refleja lo escrito." android:layout_marginTop="4dp" android:layout_marginBottom="12dp" />
+        <androidx.appcompat.widget.SearchView android:id="@+id/busqueda" android:layout_width="match_parent" android:layout_height="wrap_content" app:iconifiedByDefault="false" app:queryHint="Buscar en el catálogo" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="" android:id="@+id/resultado_busqueda" android:layout_marginTop="8dp" />
+      </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+  </LinearLayout>
+</androidx.core.widget.NestedScrollView>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true">
+  <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+    <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp">
+      <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Relleno, contorno y texto" android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="MaterialButton ofrece distintos niveles de énfasis. Cada botón muestra un mensaje al pulsarlo." android:layout_marginTop="4dp" android:layout_marginBottom="12dp" />
+        <com.google.android.material.button.MaterialButton android:id="@+id/relleno" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Relleno" />
+        <com.google.android.material.button.MaterialButton android:id="@+id/contorno" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Contorno" style="?attr/materialButtonOutlinedStyle" />
+        <com.google.android.material.button.MaterialButton android:id="@+id/texto" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Solo texto" style="?attr/borderlessButtonStyle" />
+      </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp">
+      <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Botones con ícono" android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Los íconos representan acciones compactas; acompañarlos con texto aclara su significado. Pulsa ambos ejemplos para ver la respuesta." android:layout_marginTop="4dp" android:layout_marginBottom="12dp" />
+        <ImageButton android:id="@+id/icono" android:layout_width="48dp" android:layout_height="48dp" android:src="@android:drawable/ic_menu_share" android:contentDescription="Compartir" android:background="?attr/selectableItemBackgroundBorderless" app:tint="?attr/colorOnSurface" />
+        <com.google.android.material.button.MaterialButton android:id="@+id/icono_texto" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Compartir" app:icon="@android:drawable/ic_menu_share" />
+      </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp">
+      <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Botón de acción flotante" android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="FloatingActionButton destaca una acción principal. La versión extendida añade una etiqueta para describirla." android:layout_marginTop="4dp" android:layout_marginBottom="12dp" />
+        <com.google.android.material.floatingactionbutton.FloatingActionButton android:id="@+id/fab" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="8dp" android:contentDescription="Agregar" app:srcCompat="@android:drawable/ic_input_add" />
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton android:id="@+id/fab_extendido" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="8dp" android:text="Redactar" app:icon="@android:drawable/ic_menu_edit" />
+      </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp">
+      <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Selector segmentado" android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="MaterialButtonToggleGroup mantiene una única opción activa. Elige Día o Noche y observa el resultado." android:layout_marginTop="4dp" android:layout_marginBottom="12dp" />
+        <com.google.android.material.button.MaterialButtonToggleGroup android:id="@+id/segmentado" android:layout_width="wrap_content" android:layout_height="wrap_content" app:singleSelection="true" app:selectionRequired="true" app:checkedButton="@id/dia">
+          <com.google.android.material.button.MaterialButton android:id="@+id/dia" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Día" style="?attr/materialButtonOutlinedStyle" />
+          <com.google.android.material.button.MaterialButton android:id="@+id/noche" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Noche" style="?attr/materialButtonOutlinedStyle" />
+        </com.google.android.material.button.MaterialButtonToggleGroup>
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="" android:id="@+id/modo_elegido" android:layout_marginTop="8dp" />
+      </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp">
+      <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Deshabilitado y cargando" android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Un botón deshabilitado no admite pulsaciones. El botón Enviar se bloquea durante dos segundos y luego muestra el resultado." android:layout_marginTop="4dp" android:layout_marginBottom="12dp" />
+        <com.google.android.material.button.MaterialButton android:id="@+id/deshabilitado" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Deshabilitado" android:enabled="false" />
+        <com.google.android.material.button.MaterialButton android:id="@+id/enviar" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Enviar" />
+        <com.google.android.material.progressindicator.CircularProgressIndicator android:id="@+id/carga_boton" android:layout_width="32dp" android:layout_height="32dp" android:indeterminate="true" android:visibility="gone" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="" android:id="@+id/estado_envio" android:layout_marginTop="8dp" />
+      </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+  </LinearLayout>
+</androidx.core.widget.NestedScrollView>
